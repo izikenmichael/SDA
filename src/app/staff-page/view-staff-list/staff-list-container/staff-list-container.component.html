@@ -2,4 +2,10 @@
   <div *ngFor="let item of staffList" class="col-md-4 p-3 staff-list rgba-purple-strong">
     <app-staff-item [staffItem]="item"></app-staff-item>
   </div>
+  <div class="col-md-4 p-2 staff-list rgba-purple-strong text-center white-text d-flex flex-column">
+    <p class="my-auto" title="Add new staff..">
+      <img src="./assets/icons/add.svg" class="img-fluid" alt="Add Staff">
+    </p>
+    <!-- <small class="m-auto">Add New Staff</small> -->
+  </div>
 </div>
