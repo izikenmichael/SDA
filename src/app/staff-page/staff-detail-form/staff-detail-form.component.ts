@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Skill } from '../skill.model';
 import { Staff } from '../staff.model';
 
 @Component({
@@ -24,8 +23,6 @@ tSkillDesc: string;
 
   ngOnInit() {
     this.createReactiveform();
-    const a = 'Mike' 
-    this.staffDetails = new Staff(a, []);
   }
 
   newStaff() {

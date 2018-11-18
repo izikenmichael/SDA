@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Staff } from '../../staff.model';
-import { Skill } from '../../skill.model';
+import { Staff } from 'src/app/staff-page/staff.model';
 
 @Component({
   selector: 'app-staff-item',
@@ -9,20 +8,9 @@ import { Skill } from '../../skill.model';
 })
 export class StaffItemComponent implements OnInit {
   @Input() staffItem: Staff;
-  staffList: Staff;
   constructor() { }
 
   ngOnInit() {
-  }
-
-  deleteStaffSkill(skill: Skill): boolean {
-    this.staffList.deleteSkill(skill)
-    return false;
-  }
-
-  addStaffSkill(skill: Skill): boolean {
-    this.staffList.addSkill(skill)
-    return false;
   }
 
 }

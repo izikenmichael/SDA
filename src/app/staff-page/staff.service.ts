@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
-import { NewStaff } from './new-staff.model';
+import { NewStaff } from './staff.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({

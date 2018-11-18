@@ -4,15 +4,14 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
-import { StaffDetailFormComponent } from './staff-detail-form/staff-detail-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
-import { EditStaffComponent } from './edit-staff/edit-staff.component';
 import { StaffPageComponent } from './staff-page/staff-page.component';
-import { StaffListComponent } from './staff-page/staff-list/staff-list.component';
-import { StaffItemComponent } from './staff-page/staff-item/staff-item.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StaffListContainerComponent } from './staff-page/staff-list-container/staff-list-container.component';
+import { StaffDetailFormComponent } from './staff-page/staff-detail-form/staff-detail-form.component';
+import { EditStaffComponent } from './staff-page/edit-staff/edit-staff.component';
+import { StaffListContainerComponent } from './staff-page/view-staff-list/staff-list-container/staff-list-container.component';
+import { StaffItemComponent } from './staff-page/view-staff-list/staff-list-container/staff-item/staff-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { StaffListContainerComponent } from './staff-page/staff-list-container/s
     LandingComponent,
     EditStaffComponent,
     StaffPageComponent,
-    StaffListComponent,
     StaffListContainerComponent
   ],
   imports: [

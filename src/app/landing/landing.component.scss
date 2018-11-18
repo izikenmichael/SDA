@@ -1,4 +1,13 @@
-:host {
-    margin-left: auto;
-    margin-right: auto;
+.view {
+    background: url("src/assets/images/tie.jpg")no-repeat center center;
+    background-size: cover;
+    height: calc(100vh);
+    padding-top: 120px;
+    overflow-y: auto;
+    margin-top: -70px;
 }
+
+// :host {
+//     margin-left: auto;
+//     margin-right: auto;
+// }
