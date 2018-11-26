@@ -27,6 +27,7 @@ export class StaffListContainerComponent implements OnInit {
   }
 
   checkURLParam() {
+    console.log(this.aRoute);
     let id = this.aRoute.snapshot.paramMap.get('id');
     if (id) {
       this.getSelected(id);

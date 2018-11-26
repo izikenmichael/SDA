@@ -1,7 +1,8 @@
-<ng-container *ngIf="selectedStaff; then selectedStaffContainer; else staffListCntainer"></ng-container>
-<ng-template #staffListCntainer>
+<ng-container *ngIf="selectedStaff; then selectedStaffContainer; else staffListContainer"></ng-container>
+<ng-template #staffListContainer>
   <div class="row mx-5 rgba-black-strong z-depth-3">
-    <div *ngFor="let item of staffList" [routerLink]="['/staffManager/staff-list', item.id]"
+    <div *ngFor="let item of staffList" 
+    [routerLink]="['/staffManager/staff-list', item.id]"
     routerLinkActive="active" class="col-md-4 p-3 staff-list rgba-purple-strong">
       <app-staff-item [staffItem]="item"></app-staff-item>
     </div>
