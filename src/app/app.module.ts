@@ -5,25 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LandingComponent } from './landing/landing.component';
-import { StaffPageComponent } from './staff-page/staff-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StaffDetailFormComponent } from './staff-page/staff-detail-form/staff-detail-form.component';
-import { EditStaffComponent } from './staff-page/edit-staff/edit-staff.component';
-import { StaffListContainerComponent } from './staff-page/view-staff-list/staff-list-container/staff-list-container.component';
-import { StaffItemComponent } from './staff-page/view-staff-list/staff-list-container/staff-item/staff-item.component';
+import { StaffPageModule } from './staff-page/staff-page.module';
+import { LandingModule } from './landing/landing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StaffItemComponent,
-    StaffDetailFormComponent,
-    LandingComponent,
-    EditStaffComponent,
-    StaffPageComponent,
-    StaffListContainerComponent
+    PageNotFoundComponent
   ],
   imports: [
+    StaffPageModule,
+    LandingModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

@@ -1,11 +1,22 @@
-<div class="row mx-5 rgba-black-strong z-depth-3">
-  <div *ngFor="let item of staffList" class="col-md-4 p-3 staff-list rgba-purple-strong">
-    <app-staff-item [staffItem]="item"></app-staff-item>
+<ng-container *ngIf="selectedStaff; then selectedStaffContainer; else staffListCntainer"></ng-container>
+<ng-template #staffListCntainer>
+  <div class="row mx-5 rgba-black-strong z-depth-3">
+    <div *ngFor="let item of staffList" [routerLink]="['/staffManager/staff-list', item.id]"
+    routerLinkActive="active" class="col-md-4 p-3 staff-list rgba-purple-strong">
+      <app-staff-item [staffItem]="item"></app-staff-item>
+    </div>
+    <img src="./assets/icons/add.svg" class="img-fluid z-depth-4 rounded-circle bg-light p-3 red add-btn" alt="Add Staff"
+      mdbWavesEffect>
   </div>
-  <div class="col-md-4 p-2 staff-list rgba-purple-strong text-center white-text d-flex flex-column">
-    <p class="my-auto" title="Add new staff..">
-      <img src="./assets/icons/add.svg" class="img-fluid" alt="Add Staff">
-    </p>
-    <!-- <small class="m-auto">Add New Staff</small> -->
+</ng-template>
+<ng-template #selectedStaffContainer>
+  <div class="row mx-5 mb-5 rgba-white-strong z-depth-3">
+    <div class="col-md-4 p-0 staff-list purple">
+      <img src="./assets/images/people/{{selectedStaff.id}}.jpg" class="img-fluid z-depth-1 bg-light" alt="Edit Staff"
+        mdbWavesEffect>
+      <!-- <P>{{selectedStaff | json}}</P> -->
+    </div>
+    <img src="./assets/icons/edit.svg" class="img-fluid z-depth-1 rounded-top bg-light p-3 add-btn" alt="Edit Staff"
+      mdbWavesEffect>
   </div>
-</div>
+</ng-template>

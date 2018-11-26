@@ -1,9 +1,11 @@
 export class NewStaff {
+    id: string;
     name: string;
     height: number;
     eye_color: string;
 
-    constructor(name: string, height: number, eye_color: string) {
+    constructor(id: string, name: string, height: number, eye_color: string) {
+        this.id = id;
         this.name = name;
         this.height = height;
         this.eye_color = eye_color;

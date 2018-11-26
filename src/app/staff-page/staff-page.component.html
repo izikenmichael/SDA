@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row mb-5">
-    <div class="col-12 mx-auto text-center">
-      <button type="button" class="btn btn-light">View Staff List</button>
-      <button type="button" class="btn btn-secondary">Add New Staff</button>
-      <button type="button" class="btn btn-secondary">Review App</button>
+    <div [ngClass]="{'class': true}" class="col-12 mx-auto text-center">
+      <button [routerLink]="['/staffManager/staff-list']" routerLinkActive="active" type="button" class="btn btn-secondary">View Staff List</button>
+      <button [routerLink]="['/staffManager/add-staff']" routerLinkActive="active" type="button" class="btn btn-secondary">Add New Staff</button>
+      <button mdbBtn type="button" class="btn btn-secondary waves-light" mdbWavesEffect>Review App</button>
     </div>
   </div>
 </div>
 
-<div class="container-fluid p-5 rgba-black-solid">
-  <app-staff-list-container></app-staff-list-container>
+<div class="container-fluid px-5 rgba-black-solid">
+  <!-- <app-staff-list-container></app-staff-list-container> -->
+  <router-outlet></router-outlet>
 </div>

@@ -17,7 +17,7 @@ export class StaffPageComponent implements OnInit {
   constructor(private staffService: StaffListService) { }
 
   ngOnInit() {
-    this.staffService.getStaffData();
+    this.staffService.getStaffList();
   }
 
   addStaffDetails() {

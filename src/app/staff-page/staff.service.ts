@@ -11,13 +11,17 @@ export class StaffListService {
   PATH = 'https://swapi.co/api/people/';
  // Observable stream for staff Array
  staff: Subject<NewStaff[]> = new BehaviorSubject<NewStaff[]>(null);
+ selectedStaff: Subject<any> = new BehaviorSubject<any>(null);
   constructor(private http: HttpClient) { }
 
-  getStaff(): Observable<any> {
-    return this.http.get(this.PATH);
+  getStaff(id?): Observable<any> {
+   if (id) {
+    return this.http.get(`${this.PATH}${id}`);
+   } 
+   return this.http.get(this.PATH);
   }
 
-  getStaffData() {
+  getStaffList() {
     this.getStaff().subscribe(
       res => {
         console.log(res.results);
@@ -29,11 +33,26 @@ export class StaffListService {
     )
   }
 
+  getStaffDetails(id) {
+    this.getStaff(id).subscribe(
+      res => {
+        console.log(res);
+        res.id = id;
+        this.selectedStaff.next(res)
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    )
+  }
+
   extractData(results) {
     let s: NewStaff[] = [];
     for (const staff of results) {
+      let id = staff.url.split('/').slice(0, -1).pop();
+      console.log(id);
     s.push(
-      new NewStaff(staff.name, staff.height, staff.eye_color)
+      new NewStaff(id, staff.name, staff.height, staff.eye_color)
       )
      console.log(s);
     }
