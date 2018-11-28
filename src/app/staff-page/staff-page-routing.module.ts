@@ -4,10 +4,11 @@ import { EditStaffComponent } from './edit-staff/edit-staff.component';
 import { StaffDetailFormComponent } from './staff-detail-form/staff-detail-form.component';
 import { StaffListContainerComponent } from './view-staff-list/staff-list-container/staff-list-container.component';
 import { StaffPageComponent } from './staff-page.component';
+import { AuthGuard } from '../onboarding/auth.guard';
 
 const staffRoutes: Routes = [
   {
-    path: 'staffManager', component: StaffPageComponent,
+    path: '', component: StaffPageComponent, canActivate: [AuthGuard],
     children: [
       {path: '', redirectTo: 'staff-list', pathMatch: 'full'},
       { path: 'staff-list', component: StaffListContainerComponent },
